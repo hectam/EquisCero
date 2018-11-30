@@ -71,14 +71,14 @@ public class logica {
 public void asignarNombre(){
     System.out.println("\nSeleccione a que jugador quiere cambiarle el Nombre:"
             + "\n1. "+jugadores[0]
-    +"\n2. "+jugadores[1]
-    +"Seleccione una Opcion: ");
+    +"\n2. "+jugadores[1]);
+    System.out.println("Seleccione una Opcion:");
     int opc=lee.nextInt();
     switch (opc){
         case 1:
             System.out.println("Ingrese el nuevo nombre:");
             String name=lee.next();
-            if(name.equals(jugadores[1]) && name.equals(jugadores[0])){
+            if(name.equals(jugadores[1])||  name.equals(jugadores[0])){
                 System.out.println("Ese nombre ya esta en uso!!!!!!");
             }else{
                 System.out.println("Cambio completado");
@@ -89,7 +89,7 @@ public void asignarNombre(){
         case 2:
                System.out.println("Ingrese el nuevo nombre:");
                String name1=lee.next();
-            if(name1.equals(jugadores[0]) && name1.equals(jugadores[1])){
+            if(name1.equals(jugadores[0]) || name1.equals(jugadores[1])){
                 System.out.println("Ese nombre ya esta en uso!!!!!!");
             }else{
                 System.out.println("Cambio completado");
@@ -107,14 +107,15 @@ public void asignarNombre(){
 public void asignarSimbolo(){
     System.out.println("\nSeleccione a que jugador quiere cambiarle el Simbolo:"
             + "\n1. "+jugadores[0]
-    +"\n2. "+jugadores[1]
-    +"Seleccione una Opcion: ");
+    +"\n2. "+jugadores[1]);
+    System.out.println("Seleccione una Opcion:");
+
     int opc=lee.nextInt();
     switch (opc){
         case 1:
             System.out.println("Ingrese el nuevo Simbolo:");
             String name=lee.next();
-            if(name.equals(o) && name.equals(X)){
+            if(name.equals(o)|| name.equals(X)){
                 System.out.println("Ese nombre ya esta en uso!!!!!!");
             }else{
                 System.out.println("Cambio completado");
@@ -125,7 +126,7 @@ public void asignarSimbolo(){
         case 2:
                System.out.println("Ingrese el nuevo Simbolo:");
                String name1=lee.next();
-            if(name1.equals(o) && name1.equals(X)){
+            if(name1.equals(o) || name1.equals(X)){
                 System.out.println("Ese nombre ya esta en uso!!!!!!");
             }else{
                 System.out.println("Cambio completado");
@@ -144,7 +145,7 @@ public void fileSaver(String x)throws IOException{
     
     if(b.exists()){
           bw = new BufferedWriter(new FileWriter(b,true));
-      bw.write(x);
+      bw.write("\n"+x);
     }else{
         bw = new BufferedWriter(new FileWriter(b,true));
       bw.write("\n"+x);
